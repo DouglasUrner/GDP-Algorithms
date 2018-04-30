@@ -34,13 +34,58 @@ Other algorithm videos:
 
 ## The Basics in C&num;
 
-+++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=The Starting Script
+* Syntax
+* Common mistakes
+* Checklist
 
-
+Note:
+* Make sure students have notebooks.
+* Guide them it taking notes on common errors.
 
 +++
 
-### Sequences
+## The Starting Script
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Maze : MonoBehaviour {
+
+	// Use this for initialization
+	void Start() {
+
+	}
+
+	// Update is called once per frame
+	void Update() {
+
+	}
+}
+```
+
+@[5, 16]
+
+@[7]
+
+@[8-10]
+
+Note:
+Point out:
+* class
+* method
+
+Common errors:
+* Spelling
+* Capitalization
+* Braces
+
++++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=Soquences
+
+@[21-23]
+
+Note:
 
 +++
 
