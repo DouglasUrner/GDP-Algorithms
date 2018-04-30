@@ -34,7 +34,6 @@ Other algorithm videos:
 
 ## The Basics in C&num;
 
-
 +++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp
 
 
