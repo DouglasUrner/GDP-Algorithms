@@ -34,7 +34,7 @@ Other algorithm videos:
 
 ## The Basics in C&num;
 
-+++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp
++++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=The Starting Script
 
 
 
