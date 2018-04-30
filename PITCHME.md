@@ -81,19 +81,23 @@ Common errors:
 * Capitalization
 * Braces
 
-+++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=Soquences
++++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=Sequences
 
 @[21-23]
 
 Note:
 
-+++
++++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=Branches
 
-### Branches
+@[]
 
-+++
+Note:
 
-### Loops
++++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp&title=Loops
+
+@[]
+
+Note:
 
 +++
 
