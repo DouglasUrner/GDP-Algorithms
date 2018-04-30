@@ -21,11 +21,11 @@ public class Maze : MonoBehaviour {
 				float PacDotX = j * PacDotStep;
 				float PacDotY = i * PacDotStep;
 				var newLocation = PacDotOrigin + new Vector2(PacDotX, PacDotY);
-				GameObject LastPacDot;
 				if (inMaze(newLocation)) {
-					GameObject pd = Instantiate(PacDotPrefab, newLocation, Quaternion.identity);
+					GameObject pd = Instantiate(PacDotPrefab);
+					pd.transform.parent = transform;
+					pd.transform.position = newLocation;
 					pd.name = PacDotPrefab.name + " " + newLocation;
-					LastPacDot = pd;
 					PacDotsPlaced++;
 				}
 			}
