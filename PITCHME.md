@@ -32,7 +32,11 @@ Other algorithm videos:
 
 ---
 
+<<<<<<< HEAD
 ## The Basics in C&num;
+=======
+## The Basics in C&hash;
+>>>>>>> e279a3101b71384b2e7652a5c4d4751c4630e591
 
 +++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp
 
