@@ -2,7 +2,7 @@
 
 ---
 
-# Algorithm Basics
+## Algorithm Basics
 
 +++
 
@@ -24,8 +24,32 @@ Other algorithm videos:
 
 +++
 
-# Algorithms Are Made Of
+## Algorithms Are Made Of
 
 * Sequences of instrutions
 * Branches - making decisions about which sequence of instructions to follow
 * Loops - repeating a set of instructions
+
+---
+
+## The Basics in C#
+
++++
+
+### Sequences
+
++++
+
+### Branches
+
++++
+
+### Loops
+
++++
+
+---
+
+## A Unity Example
+
++++
