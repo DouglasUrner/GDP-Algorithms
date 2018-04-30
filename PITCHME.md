@@ -32,9 +32,9 @@ Other algorithm videos:
 
 ---
 
-## The Basics in C#
+## The Basics in C\#
 
-+++?code=Pac-Person/Assets/Scripts/Maze.cs
++++?code=Pac-Person/Assets/Scripts/Maze.cs&lang=csharp
 
 
 
