@@ -1,5 +1,12 @@
 ## Algorithms
 
+* _Algorithms_ describe the process that we use to accomplish a goal.
+* In computer science (and game development) algorithms:
+  - **Always** complete, and
+  - **Always** produce a correct result.
+
+Note:
+
 ---
 
 ### Building Blocks
@@ -13,6 +20,8 @@ Note:
 ---
 
 ### Sequences
+
+A
 
 Note:
 
