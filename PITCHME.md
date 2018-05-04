@@ -81,7 +81,7 @@ for (_loop control goes here_) {
 ### Loop control
 
 ```csharp
-for (_initialize_; _check_; _recalculate_) {
+for (initialize; check; recalculate) {
   // Repeating code.
 }
 ```
@@ -128,6 +128,9 @@ Note:
 +++
 
 ```csharp
+if () {
+  // Code to run if branch test is true.
+}
 ```
 
 ---
