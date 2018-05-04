@@ -81,7 +81,7 @@ for (_loop control goes here_) {
 ### Loop control
 
 ```csharp
-for (***initialize***; ***check***; ***recalculate***) {
+for (_initialize_; _check_; _recalculate_) {
   // Repeating code.
 }
 ```
@@ -113,7 +113,7 @@ This reads as:
 
 After the loop completes, execution will continue with the line after the closing curly brace of the loop.
 
-Note:
+Note
 
 ---
 
