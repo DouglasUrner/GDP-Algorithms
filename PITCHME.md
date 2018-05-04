@@ -53,7 +53,7 @@ Use loops when you want to repeat a sequence of steps:
 +++
 
 ```csharp
-for (int x = 2; x < maxX; x++) {
+for (int x = 2; x < 29; x++) {
   GameObject pd = Instantiate(PacDotPrefab);
   pd.transform.position = new Vector2(x, 2);
 }
@@ -63,6 +63,55 @@ for (int x = 2; x < maxX; x++) {
 @[2-3](The X value will change.)
 @[1,4](Wrapping with a loop.)
 @[1-4](Finished loop to create a single row.)
+
+Note:
+
++++
+
+**for** loops - repeat a predictable number of times. They look like this:
+
+```csharp
+for (_loop control goes here_) {
+  // Code to repeat goes here.
+}
+```
+
++++
+
+### Loop control
+
+```csharp
+for (***initialize***; ***check***; ***recalculate***) {
+  // Repeating code.
+}
+```
+
+* Initialize: `int x = 2`
+* Check: `x < 29`
+* Recalculate: `x++`
+
+The code `x++` means add one to X.
+
++++
+
+### The Final Loop
+
+```csharp
+for (int x = 2; x < 29; x++) {
+  GameObject pd = Instantiate(PacDotPrefab);
+  pd.transform.position = new Vector2(x, 2);
+}
+```
+
+@[1.4]
+
+This reads as:
+
+* Initialize X to 2.
+* Check that X is still less than 29.
+* Add one to X and repeat the loop.
+
+After the loop completes, execution will continue with the line after the closing curly brace of the loop.
 
 Note:
 
