@@ -94,7 +94,7 @@ The code `x++` means add one to X.
 
 +++
 
-### The Final Loop
+### The Finished Loop
 
 ```csharp
 for (int x = 2; x < 29; x++) {
@@ -128,10 +128,39 @@ Note:
 +++
 
 ```csharp
-if () {
-  // Code to run if branch test is true.
+if (boolean (true or false) test) {
+  // Code to run if test is true.
+}
+
+// Or...
+
+if (boolean (true or false) test) {
+  // Code to run if test is true.
+} else {
+  // Code to run if test is false.
+}
+
+// Or...
+
+if (boolean (true or false) test) {
+  // Code to run if test is true.
+} else if (another test) {
+  // Code if that test is true.
+} else {
+  // Code to run if no test is true.
 }
 ```
+
+@[1,3](Simple branch)
+@[5,11](If this otherwise that)
+@[13,21](If this, or maybe this, otherwise that)
+
+Note:
+
++++
+
+### The Loop Test
+
 
 ---
 
