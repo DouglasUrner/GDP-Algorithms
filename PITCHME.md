@@ -46,8 +46,9 @@ Note:
 
 Use loops when you want to repeat a sequence of steps:
 1. Identify the steps you want to repeat.
-2. Decide what, if anything, should change each time the steps are repeated.
+2. Decide what, if anything, should change each time the steps are repeated. Replace constants with variables.
 3. Wrap the repeating steps in a loop.
+4. Calculate the new value(s) for variables that change
 
 +++
 
@@ -58,10 +59,10 @@ for (int x = 2; x < maxX; x++) {
 }
 ```
 
-@[2-3]
-@[2-3](We want to change the X position each time we repeat.)
+@[2-3](Steps to repeat.)
+@[2-3](The X value will change.)
 @[1,4](Wrapping with a loop.)
-@[1-4](Loop to create a single row.)
+@[1-4](Finished loop to create a single row.)
 
 Note:
 
