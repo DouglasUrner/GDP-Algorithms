@@ -12,23 +12,28 @@ public class Maze : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		// Begin in lower left-hand corner
-		// Instatantiate (place) PacDot.
-		Vector2 oldLocation = PacDotOrigin;
+		// Origin is the lower left-hand corner
+		instantiatePacDots();
+	}
 
+	private void instantiatePacDots() {
 		for (int i = 0; i < PacDotRows; i++) {
 			for (int j = 0; j < PacDotCols; j++) {
 				float PacDotX = j * PacDotStep;
 				float PacDotY = i * PacDotStep;
-				var newLocation = PacDotOrigin + new Vector2(PacDotX, PacDotY);
-				if (inMaze(newLocation)) {
-					GameObject pd = Instantiate(PacDotPrefab);
-					pd.transform.parent = transform;
-					pd.transform.position = newLocation;
-					pd.name = PacDotPrefab.name + " " + newLocation;
-					PacDotsPlaced++;
-				}
+				instantiatePacDot(PacDotX, PacDotY);
 			}
+		}
+	}
+
+	private void instantiatePacDot(float x, float y) {
+		var newLocation = PacDotOrigin + new Vector2(x, y);
+		if (inMaze(newLocation)) {
+			GameObject pd = Instantiate(PacDotPrefab);
+			pd.transform.parent = transform;
+			pd.transform.position = newLocation;
+			pd.name = PacDotPrefab.name + " " + newLocation;
+			PacDotsPlaced++;
 		}
 	}
 
