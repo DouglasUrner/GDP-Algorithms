@@ -6,13 +6,14 @@ public class Maze : MonoBehaviour {
 	public Texture2D mazeImage;
 	public int PixelsPerUnit = 8;		// Image pixels per Unity unit.
 	public Vector2 MazeScanStart = Vector2.zero;
-	public int CollidersPlaced;
 
 	public Vector2 PacDotOrigin = new Vector2(2, 2);
 	public float PacDotStep = 1.0f;
 	public int PacDotRows = 29;
 	public int PacDotCols = 26;
 	public GameObject PacDotPrefab;
+
+	public int CollidersPlaced;
 	public int PacDotsPlaced;
 
 	// Use this for initialization
@@ -22,6 +23,16 @@ public class Maze : MonoBehaviour {
 		instantiatePacDots();
 	}
 
+	/**
+	 * Scan the maze file to locate the walls and place colliders on them.
+	 *
+	 * Assumptions:
+	 * - We start outside of the maze (or perhaps we can start in the passageway.
+	 * - Our origin and the step beween scans are set to avoid hitting an edge.
+	 * - Colliders can be placed in units of the vertical step.
+	 *
+	 * TODO: handle hitting an edge of a wall.
+	 */
 	private void placeMazeColliders() {
 		// Scan the maze sprite placing Colliders on lines.
 		Color32[,] pixels = getMazePixels();
@@ -60,6 +71,11 @@ public class Maze : MonoBehaviour {
 		return pixels;
 	}
 
+	/**
+	 * Add a W x H Collider2D at X, Y in "maze space."
+	 *
+	 * Return the Collider2D component.
+	 */
 	private BoxCollider2D addCollider2D(float x, float y, float w, float h) {
 		BoxCollider2D bc = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
 		bc.offset = new Vector2(x, y);
