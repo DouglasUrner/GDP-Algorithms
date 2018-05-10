@@ -24,30 +24,47 @@ public class Maze : MonoBehaviour {
 
 	private void placeMazeColliders() {
 		// Scan the maze sprite placing Colliders on lines.
-		int mazePixelWidth = mazeImage.width;
-		int mazePixelHeight = mazeImage.height;
+		Color32[,] pixels = getMazePixels();
+		int MazePixelsX = mazeImage.width;
+		int MazePixelsY = mazeImage.height;
+		int ppu = PixelsPerUnit;
 
-		Color32[] pixels = mazeImage.GetPixels32();
+
 		Debug.Log(pixels.Length);
-		Debug.Log(pixels[0]);
-		Color32 pixel00 = pixels[0];
-		for (int h = (int) (MazeScanStart.y * PixelsPerUnit); h < mazePixelHeight; h++) {
-			for (int w = (int) (MazeScanStart.x * PixelsPerUnit); w < mazePixelWidth; w++) {
-				int index = h * (mazePixelWidth) + w;
-				if (!pixels[index].Equals(pixel00)) {
-					int xLeft = w;
-					while (pixels[++w].Equals(pixel00))
+		Debug.Log(pixels[0, 0]);
+		Color32 pixel00 = pixels[0, 0];
+		for (int y = (int) (MazeScanStart.y * ppu); y < MazePixelsY; y++) {
+			for (int x = (int) (MazeScanStart.x * ppu); x < MazePixelsX; x++) {
+				if (!pixels[x, y].Equals(pixel00)) {
+					int xLeft = x;
+					while (pixels[++x, y].Equals(pixel00))
 						;
-					int colliderWidth = (w - xLeft) / PixelsPerUnit;
-					int colliderOffsetX = (w - colliderWidth / 2) / PixelsPerUnit;
+					++x;
+					float colliderWidth = x - xLeft;
+					float colliderOffsetX = x - (colliderWidth / 2.0f);
 //					string msg = "pixels[" + w + ", " + h + "] (" + index + ") = " + pixels[index];
 //					Debug.Log(msg);
-					addCollider2D(colliderOffsetX, h / PixelsPerUnit, colliderWidth, 1f);
+					addCollider2D(colliderOffsetX / ppu, (float) y / ppu, colliderWidth / ppu, 1.0f);
 					CollidersPlaced++;
 					return;
 				}
 			}
 		}
+	}
+
+	/**
+	 * Get a 2D array of pixels representing the maze image.
+	 */
+	Color32[,] getMazePixels() {
+		var pixels = new Color32[mazeImage.width, mazeImage.height];
+		var tmp = mazeImage.GetPixels32();
+		for (int y = 0; y < mazeImage.height; y++) {
+			for (int x = 0; x < mazeImage.width; x++) {
+				pixels[x, y] = tmp[y * mazeImage.width + x];
+			}
+		}
+
+		return pixels;
 	}
 
 	private BoxCollider2D addCollider2D(float x, float y, float w, float h) {
