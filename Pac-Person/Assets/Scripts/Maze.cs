@@ -29,11 +29,8 @@ public class Maze : MonoBehaviour {
 		int MazePixelsY = mazeImage.height;
 		int ppu = PixelsPerUnit;
 
-
-		Debug.Log(pixels.Length);
-		Debug.Log(pixels[0, 0]);
 		Color32 pixel00 = pixels[0, 0];
-		for (int y = (int) (MazeScanStart.y * ppu); y < MazePixelsY; y++) {
+		for (int y = (int) (MazeScanStart.y * ppu); y < MazePixelsY; y += ppu) {
 			for (int x = (int) (MazeScanStart.x * ppu); x < MazePixelsX; x++) {
 				if (!pixels[x, y].Equals(pixel00)) {
 					int xLeft = x;
@@ -41,13 +38,10 @@ public class Maze : MonoBehaviour {
 						;
 					float colliderWidth = (x + 1) - xLeft;
 					float colliderOffsetX = (x + 1) - (colliderWidth / 2.0f);
-//					string msg = "pixels[" + w + ", " + h + "] (" + index + ") = " + pixels[index];
-//					Debug.Log(msg);
 					addCollider2D(colliderOffsetX / ppu, (float) y / ppu, colliderWidth / ppu, 1.0f);
 					CollidersPlaced++;
 				}
 			}
-			return;
 		}
 	}
 
