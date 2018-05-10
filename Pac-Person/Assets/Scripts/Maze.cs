@@ -39,16 +39,15 @@ public class Maze : MonoBehaviour {
 					int xLeft = x;
 					while (pixels[++x, y].Equals(pixel00))
 						;
-					++x;
-					float colliderWidth = x - xLeft;
-					float colliderOffsetX = x - (colliderWidth / 2.0f);
+					float colliderWidth = (x + 1) - xLeft;
+					float colliderOffsetX = (x + 1) - (colliderWidth / 2.0f);
 //					string msg = "pixels[" + w + ", " + h + "] (" + index + ") = " + pixels[index];
 //					Debug.Log(msg);
 					addCollider2D(colliderOffsetX / ppu, (float) y / ppu, colliderWidth / ppu, 1.0f);
 					CollidersPlaced++;
-					return;
 				}
 			}
+			return;
 		}
 	}
 
