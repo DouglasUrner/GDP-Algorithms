@@ -68,6 +68,7 @@ public class Maze : MonoBehaviour {
 			}
 		}
 
+
 		return pixels;
 	}
 
